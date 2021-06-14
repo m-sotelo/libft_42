@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/29 12:37:19 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/06/14 13:35:55 by msotelo-         ###   ########.fr       */
+/*   Created: 2021/06/14 14:58:31 by msotelo-          #+#    #+#             */
+/*   Updated: 2021/06/14 15:15:34 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
-size_t	ft_strlcpy(char	*dst, const char *src, size_t dstsize)
+int	ft_isalpha(int c)
 {
-	unsigned int	i;
-	unsigned int	j;
+	unsigned	char a;
 
-	i = 0;
-	j = 0;
-	while (src[i] != '\0')
+	a = c;
+	if((a >= 65 && a <= 90) || (a >= 97 && a <= 122))
 	{
-		i++;
+		return (1);
 	}
-	if (j < dstsize)
+	else
 	{
-		while (src[j] != '\0' && j < (dstsize - 1))
-		{
-			dst[j] = src [j];
-			j++;
-		}
-		dst[j] = '\0';
-	}
-	return (i);
+		return (0);
+	}	
 }

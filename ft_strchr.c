@@ -1,34 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/29 12:37:19 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/06/14 13:35:55 by msotelo-         ###   ########.fr       */
+/*   Created: 2021/06/14 13:58:19 by msotelo-          #+#    #+#             */
+/*   Updated: 2021/06/14 14:02:37 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
-size_t	ft_strlcpy(char	*dst, const char *src, size_t dstsize)
+char	*strchr(const char *s, int c)
 {
-	unsigned int	i;
-	unsigned int	j;
-
-	i = 0;
-	j = 0;
-	while (src[i] != '\0')
-	{
-		i++;
-	}
-	if (j < dstsize)
-	{
-		while (src[j] != '\0' && j < (dstsize - 1))
-		{
-			dst[j] = src [j];
-			j++;
-		}
-		dst[j] = '\0';
-	}
-	return (i);
+	char	a;
+	
+	a = c;
 }
