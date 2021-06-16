@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/14 17:36:04 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/06/14 17:40:13 by msotelo-         ###   ########.fr       */
+/*   Created: 2021/06/16 13:30:05 by msotelo-          #+#    #+#             */
+/*   Updated: 2021/06/16 13:51:39 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	tolower(int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if(c >= 65 && c <= 90)
+	unsigned char	*a;
+	int				i;
+
+	i = 0;
+	a = (unsigned char *)s;
+	while (n > 0)
 	{
-		c = c + 32;
-		return (c);
+		if (a[i] == (unsigned char)c)
+		{
+			return ((void *)a);
+		}
+		i++;
+		n--;
 	}
-	else
-	{
-		return (c);
-	}
+	return (NULL);
 }

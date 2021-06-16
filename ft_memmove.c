@@ -1,23 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/14 17:36:04 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/06/14 17:40:13 by msotelo-         ###   ########.fr       */
+/*   Created: 2021/06/16 13:24:44 by msotelo-          #+#    #+#             */
+/*   Updated: 2021/06/16 16:04:34 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	tolower(int c)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	if(c >= 65 && c <= 90)
+	unsigned char		*a;
+	const unsigned char	*b;
+	int	i;
+
+	i = 0;
+	a = (unsigned char *)dst;
+	b = (const unsigned char *)src;
+	if (dst == NULL && src == NULL)
 	{
-		c = c + 32;
-		return (c);
+		return (NULL);
+	}
+	if (dst > src)
+	{
+		while (len > 0)
+		{
+			a[len] = b[len];
+			len--;
+		}
 	}
 	else
 	{
-		return (c);
+		while (len > 0)
+		{
+			a[i] = b[i];
+			i++;
+			len--;
+		}
 	}
 }

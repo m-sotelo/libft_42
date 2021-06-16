@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/14 17:36:04 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/06/14 17:40:13 by msotelo-         ###   ########.fr       */
+/*   Created: 2021/06/16 13:36:25 by msotelo-          #+#    #+#             */
+/*   Updated: 2021/06/16 16:05:34 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	tolower(int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if(c >= 65 && c <= 90)
+	int	i;
+	unsigned char	*a;
+	unsigned char	*b;
+
+	a = (unsigned char *)s1;
+	b = (unsigned char *)s2;
+	i = 0;
+	while (n > 0)
 	{
-		c = c + 32;
-		return (c);
+		if (a[i] != b[i])
+		{
+			return (a[i] - b[i]);
+		}
+		i++;
+		n--;
 	}
-	else
-	{
-		return (c);
-	}
+	return (0);
 }

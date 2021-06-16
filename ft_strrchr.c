@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/14 17:36:04 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/06/14 17:40:13 by msotelo-         ###   ########.fr       */
+/*   Created: 2021/06/16 16:27:11 by msotelo-          #+#    #+#             */
+/*   Updated: 2021/06/16 16:32:47 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	tolower(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	if(c >= 65 && c <= 90)
+	size_t	len;
+	char	*a;
+
+	a = (char *)s;
+	len = ft_strlen(s) + 1;
+	while(len > 0)
 	{
-		c = c + 32;
-		return (c);
+		if (a[len] == (char)c)
+		{
+			return (&a[len]);
+		}
+		len--;
 	}
-	else
-	{
-		return (c);
-	}
+	return (NULL);
 }

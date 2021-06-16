@@ -6,7 +6,7 @@
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 13:45:15 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/06/14 13:57:11 by msotelo-         ###   ########.fr       */
+/*   Updated: 2021/06/16 13:50:14 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 size_t strlcat(char *dst, const char *src, size_t dstsize)

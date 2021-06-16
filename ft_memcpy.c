@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/14 17:36:04 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/06/14 17:40:13 by msotelo-         ###   ########.fr       */
+/*   Created: 2021/06/16 13:09:41 by msotelo-          #+#    #+#             */
+/*   Updated: 2021/06/16 13:21:20 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	tolower(int c)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	if(c >= 65 && c <= 90)
+	unsigned char		*a;
+	const unsigned char	*b;
+	int					i;
+
+	i = 0;
+	a = (unsigned char *)dst;
+	b = (const unsigned char *)src;
+	if (n == 0 || (a == b))
 	{
-		c = c + 32;
-		return (c);
+		return (dst);
 	}
-	else
+	while (n > 0)
 	{
-		return (c);
+		a[i] = b[i];
+		i++;
+		n--;
 	}
+	return (dst);
 }
