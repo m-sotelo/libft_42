@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/26 14:38:06 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/06/26 17:39:18 by msotelo-         ###   ########.fr       */
+/*   Created: 2021/06/26 16:58:07 by msotelo-          #+#    #+#             */
+/*   Updated: 2021/06/26 17:48:40 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-char	*ft_strdup(const char *s1)
+char	*ft_itoa(int n)
 {
-	const char	*s2;
-	size_t		len;
+	int		i;
+	int		j;
+	int		sign;
+	char	*res;
 
-	len = ft_strlen(s1) * sizeof(char);
-	s2 = malloc(len);
-	while (len >= 0)
-	{
-		s2[len] = s1[len];
-		len--;
-	}
-	return (s2);
+	i = 1;
+	j = n;
+	sign = 1;
+	if (n < 0)
+		n = n * (-1);
+		sign = -1;
+	while ((j/10) > 9)
+		j = j/10;
+		i++;
+	res = malloc(i * sizeof(char));
+	while (n > 9)
+		if (sign == -1)
+			res[0] = '-';
+			i++;
+		else
+			res[i] = ((n%10) - '0');
+			n = n / 10;
+			i--;
+	res[i] = (n - '0');
+	return (res);
 }
