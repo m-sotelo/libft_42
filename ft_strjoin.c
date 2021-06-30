@@ -1,15 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/14 13:45:15 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/06/26 13:47:45 by msotelo-         ###   ########.fr       */
+/*   Created: 2021/06/26 15:27:00 by msotelo-          #+#    #+#             */
+/*   Updated: 2021/06/26 15:42:21 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-size_t strlcat(char *dst, const char *src, size_t dstsize)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	
+	const char	*res;
+	int			i;
+	int			j;
+
+	i = 0;
+	j = 0;
+	res = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)));
+	while (s1[i] != '\0')
+	{
+		res[i] = s1[i];
+		i++;
+	}
+	while (s2[j] != '\0')
+	{
+		res[i] = s2[i];
+		i++;
+		j++;
+	}
+	return (res);
 }

@@ -1,15 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/14 13:45:15 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/06/26 13:47:45 by msotelo-         ###   ########.fr       */
+/*   Created: 2021/06/16 16:34:17 by msotelo-          #+#    #+#             */
+/*   Updated: 2021/06/26 13:50:27 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-size_t strlcat(char *dst, const char *src, size_t dstsize)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	
 }
