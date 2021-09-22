@@ -9,6 +9,8 @@
 /*   Updated: 2021/06/16 13:21:20 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char		*a;

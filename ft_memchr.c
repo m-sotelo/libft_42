@@ -9,6 +9,8 @@
 /*   Updated: 2021/06/16 13:51:39 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*a;

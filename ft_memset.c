@@ -9,7 +9,9 @@
 /*   Updated: 2021/06/14 13:34:10 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	*memset(void *b, int c, size_t len)
+#include "libft.h"
+
+void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t	i;
 

@@ -9,30 +9,24 @@
 /*   Updated: 2021/06/26 19:28:13 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	int		j;
-	int		k;
-	int		x;
-	char	*res;
+	int	start;
+	int	end;
+	size_t	len;
 
-	i = ft_strlen(set);
-	j = ft_strlen(s1);
-	k = 0;
-	while (s1[k] != '\0')
-	{
-		x = 0;
-		while (set[x] != '\0')
-		{
-			if (s1[k] == set[x])
-			{
-
-			}
-			else if (s1[j] == set[x])
-			{
-
-			}
-		}
-	}
+	if (!s1 || !set)
+		return (NULL);
+	start = 0;
+	end = 0;
+	len = ft_strlen(s1);
+	while (ft_strchr(set, (int)*(s1 + staet)) && *(s1 + start))
+		start++;
+	if (!*(s1 + start))
+		return (NULL);
+	while (ft_strchr(set, (int)*(s1 + (len - 1 - end))) && *(s1 + (len - 1 - end)))
+		end++;
+	return (ft_substr(s1, start, len - start - end));
 }

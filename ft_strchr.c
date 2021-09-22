@@ -9,11 +9,13 @@
 /*   Updated: 2021/06/16 16:26:22 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+
 char	*ft_strchr(const char *s, int c)
 {
 	size_t	len;
 	char	*a;
-	int		i;
+	int	i;
 
 	i = 0;
 	a = (char *)s;

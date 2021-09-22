@@ -9,7 +9,8 @@
 /*   Updated: 2021/06/14 13:37:08 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
+#include "libft.h"
+
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned int	j;

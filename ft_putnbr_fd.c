@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/16 13:36:25 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/06/16 16:05:34 by msotelo-         ###   ########.fr       */
+/*   Created: 2021/07/14 17:34:20 by msotelo-          #+#    #+#             */
+/*   Updated: 2021/07/14 17:34:20 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	recursive(int n, int fd)
 {
-	int	i;
-	unsigned char	*a;
-	unsigned char	*b;
+	char	c;
 
-	a = (unsigned char *)s1;
-	b = (unsigned char *)s2;
-	i = 0;
-	while (n > 0)
+	if (n > 9)
 	{
-		if (a[i] != b[i])
-		{
-			return (a[i] - b[i]);
-		}
-		i++;
-		n--;
+		rec(n / 10, fd);
+		rec(n % 10, fd);
 	}
-	return (0);
+	else
+	{
+		c = (char)n + '0';
+		ft_putchar_fd(c, fd);
+	}
+}
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else if (n < 0)
+		ft_putchar_fd('-', fd);
+		rec(-n, fd);
+	else
+		rec(n, fd);
 }

@@ -9,12 +9,14 @@
 /*   Updated: 2021/06/26 17:48:40 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+
 char	*ft_itoa(int n)
 {
 	int		i;
 	int		j;
 	int		sign;
-	char	*res;
+	char		*res;
 
 	i = 1;
 	j = n;
