@@ -6,14 +6,14 @@
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 13:22:27 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/06/16 16:14:50 by msotelo-         ###   ########.fr       */
+/*   Updated: 2021/09/22 11:02:59 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	unsigned char		*a;
 	const unsigned char	*b;
-	int	i;
+	int					i;
 
 	i = 0;
 	a = (unsigned char *)dst;
@@ -27,11 +27,9 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		a[i] = b[i];
 		if (b[i] == (unsigned char)c)
 		{
-			return ((void *)a[i+1]);
+			return ((void *)a[i + 1]);
 		}
 		i++;
-		n--
-			i++;
-		n--;;
+		n--;
 	}
 }
