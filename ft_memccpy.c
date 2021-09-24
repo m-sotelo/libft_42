@@ -6,30 +6,30 @@
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 13:22:27 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/09/22 11:02:59 by msotelo-         ###   ########.fr       */
+/*   Updated: 2021/09/24 17:25:09 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	unsigned char		*a;
 	const unsigned char	*b;
-	int					i;
 
-	i = 0;
 	a = (unsigned char *)dst;
 	b = (const unsigned char *)src;
-	if ((*b == NULL && *a == NULL) || n == 0 || a == b)
+	if ((!*b && !*a) || n == 0 || a == b)
 	{
 		return (NULL);
 	}
 	while (n > 0)
 	{
-		a[i] = b[i];
-		if (b[i] == (unsigned char)c)
+		*(a) = *(b);
+		if (*b == (unsigned char)c)
 		{
-			return ((void *)a[i + 1]);
+			return ((void *)++a);
 		}
-		i++;
 		n--;
 	}
+	return (NULL);
 }

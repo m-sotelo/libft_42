@@ -6,18 +6,18 @@
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 14:10:04 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/09/22 10:31:54 by msotelo-         ###   ########.fr       */
+/*   Updated: 2021/09/24 17:03:46 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 int	ft_atoi(const char *str)
 {
-	int		sing;
+	int		sign;
 	int		i;
 	long	n;
 
-	sing = 1;
+	sign = 1;
 	i = 0;
 	n = 0;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')

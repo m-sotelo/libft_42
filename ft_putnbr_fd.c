@@ -6,7 +6,7 @@
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 17:34:20 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/09/22 11:10:54 by msotelo-         ###   ########.fr       */
+/*   Updated: 2021/09/24 17:27:07 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -17,8 +17,8 @@ void	recursive(int n, int fd)
 
 	if (n > 9)
 	{
-		rec(n / 10, fd);
-		rec(n % 10, fd);
+		recursive(n / 10, fd);
+		recursive(n % 10, fd);
 	}
 	else
 	{

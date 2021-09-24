@@ -6,16 +6,16 @@
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 15:27:00 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/06/26 15:42:21 by msotelo-         ###   ########.fr       */
+/*   Updated: 2021/09/24 17:39:24 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	const char	*res;
-	int			i;
-	int			j;
+	char	*res;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;

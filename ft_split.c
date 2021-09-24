@@ -6,7 +6,7 @@
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 15:54:14 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/09/24 10:03:48 by msotelo-         ###   ########.fr       */
+/*   Updated: 2021/09/24 17:28:02 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -37,7 +37,6 @@ char	**subsplit(char const *s, char c, char **out)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	n_words;
 	char	**out;
 	int		i;
 	int		j;
