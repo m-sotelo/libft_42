@@ -6,7 +6,7 @@
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 18:11:53 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/09/24 19:40:38 by msotelo-         ###   ########.fr       */
+/*   Updated: 2021/09/27 18:38:36 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -25,7 +25,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		}
 		else
 		{
-			res = s1[j] - s2[j];
+			res = (unsigned char)s1[j] - (unsigned char)s2[j];
 			return (res);
 		}
 	}

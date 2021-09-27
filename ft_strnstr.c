@@ -6,33 +6,32 @@
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 16:34:17 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/09/24 17:51:26 by msotelo-         ###   ########.fr       */
+/*   Updated: 2021/09/27 21:14:37 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <string.h>
+#include <stdio.h>
 
 char	*aux(const char *haystack, const char *needle, size_t len, size_t n)
 {
-	size_t	i;
 	int		j;
-	int		k;
+	size_t	k;
 
-	i = 0;
 	j = 0;
 	k = 0;
 	while (len > 0)
 	{
-		while (haystack[j] == needle[k])
+		while ((haystack[j] == needle[k]) && (len > 0))
 		{
-			i++;
+			if (k == n)
+			{
+				return ((char *)&haystack[j - k]);
+			}
 			j++;
 			k++;
-			if (i == n)
-			{
-				return ((char *)haystack);
-			}
+			len--;
 		}
-		i = 0;
 		k = 0;
 		j++;
 		len--;
@@ -44,9 +43,20 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	n;
 
-	n = ft_strlen(needle);
+	n = strlen(needle);
 	if (!*needle)
 		return ((char *)haystack);
 	haystack = aux(haystack, needle, len, n);
-	return ((char *)haystack);
+	if (haystack == NULL)
+		return (NULL);
+	else
+		return ((char *)haystack);
+}
+
+int	main()
+{
+	char	*str3;
+
+	str3 = ft_strnstr("hola como estas amigo", "como", 4);
+	printf("%s", str3);
 }
