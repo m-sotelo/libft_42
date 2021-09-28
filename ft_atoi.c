@@ -6,7 +6,7 @@
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 14:10:04 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/09/27 17:35:35 by msotelo-         ###   ########.fr       */
+/*   Updated: 2021/09/28 16:14:43 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,6 +15,7 @@ int	subatoi(const char *str, int i, int sign)
 {
 	long	n;
 
+	n = 0;
 	while (ft_isdigit((int)str[i]) == 1)
 	{
 		n = n * 10 + (str[i] - '0');
@@ -48,15 +49,6 @@ int	ft_atoi(const char *str)
 	}
 	if (str[i] == '+' || str[i] == '-')
 		return (0);
-/*	while (ft_isdigit((int)str[i]) == 1)
-	{
-		n = n * 10 + (str[i] - '0');
-		i++;
-		if ((n * sign) > 2147483647)
-			return (-1);
-		if ((n * sign) < -2147483648)
-			return (0);
-	}*/
 	n = subatoi(str, i, sign);
 	return (n);
 }
