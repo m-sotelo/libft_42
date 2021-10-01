@@ -6,7 +6,7 @@
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 16:58:07 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/10/01 17:00:47 by msotelo-         ###   ########.fr       */
+/*   Updated: 2021/10/01 17:25:08 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,15 +18,12 @@ static char	*ft_subitoa(int i, int n, int sign)
 	output = malloc((i + 1) * sizeof(char));
 	if (sign == -1)
 		output[0] = '-';
-	//if (n == -2147483648)
-	//	*output = "-2147483648";
-	//else
-		while (n > 9)
-		{
-			output[i] = ((n % 10) + '0');
-			n = n / 10;
-			i--;
-		}
+	while (n > 9)
+	{
+		output[i] = ((n % 10) + '0');
+		n = n / 10;
+		i--;
+	}
 	output[i] = (n + '0');
 	return (output);
 }
@@ -38,6 +35,8 @@ char	*ft_itoa(int n)
 	int		sign;
 	char	*res;
 
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	i = 0;
 	j = n;
 	sign = 1;

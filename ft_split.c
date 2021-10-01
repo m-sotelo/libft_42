@@ -6,12 +6,12 @@
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 15:54:14 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/09/24 17:28:02 by msotelo-         ###   ########.fr       */
+/*   Updated: 2021/10/01 19:27:15 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	**subsplit(char const *s, char c, char **out)
+static char	**subsplit(char const *s, char c, char **out)
 {
 	int	i;
 	int	j;
