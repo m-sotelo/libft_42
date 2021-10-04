@@ -1,55 +1,126 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/26 15:54:14 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/10/01 19:27:15 by msotelo-         ###   ########.fr       */
+/*   Created: 2021/10/04 20:53:57 by msotelo-          #+#    #+#             */
+/*   Updated: 2021/10/04 23:19:57 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <stdio.h>
 
-static char	**subsplit(char const *s, char c, char **out)
+static int	word_count(const char *s, char c)
 {
 	int	i;
 	int	j;
-	int	k;
 
 	i = 0;
-	j = 0;
-	k = 0;
-	while (s[k] != '\0')
-	{
-		out[i][j] = s[k];
-		j++;
-		if (s[k] == c)
-		{
-			i++;
-			j = 0;
-		}
-		k++;
-	}
-	out[i][j] = '\0';
-	return (out);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**out;
-	int		i;
-	int		j;
-
-	i = 0;
-	j = 0;
+	if (s[0] != c && s[0])
+		j = 1;
+	else
+		j = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
 			j++;
 		i++;
 	}
-	out = (char **)malloc(sizeof(char *) * (j + 1));
-	out = subsplit(s, c, out);
+	return (j);
+}
+
+static char	**mem_freedom(char **out, int i, int j)
+{
+	int	k;
+
+	k = j - i;
+	while (k >= 0)
+	{
+		free(out[k]);
+		k--;
+	}
+	free(out);
+	out = NULL;
 	return (out);
 }
+
+static char	**memsplit(const char *s, char c, char **out, int i)
+{
+	int		k;
+	char	**aux;
+
+	out = (char **)calloc((i + 1), sizeof(char *));
+	aux = out;
+	while (i > 0)
+	{
+		while (*s == c && *s)
+			s++;
+		k = 0;
+		while (*s != c && *s)
+		{
+			k++;
+			s++;
+		}
+		*out = (char *)calloc((k + 1), sizeof(char));
+		if (!*out)
+			return (mem_freedom(out, i, word_count(s, c)));
+		out++;
+		i--;
+	}
+	return (aux);
+}
+
+static char	**subsplit(const char *s, char c, char **out, int i)
+{
+	int		j;
+	char	**aux;
+
+	j = 0;
+	aux = out;
+	while (i > 0 && *s)
+	{
+		while (*s == c && *s)
+			s++;
+		while (*s != c && *s)
+			*(*out + j++) = *s++;
+		j = 0;
+		out++;
+		i--;
+	}
+	return (aux);
+}
+
+char	**ft_split(const char *s, char c)
+{
+	char	**out;
+	int		i;
+
+	i = word_count(s, c);
+	out = NULL;
+	out = memsplit(s, c, out, i);
+	if (out == NULL)
+		return (NULL);
+	out = subsplit(s, c, out, i);
+	return (out);
+}
+/*
+void	print_matrix(char **mat)
+{
+	int i = 0;
+
+	while (mat[i])
+	{
+		fprintf(stderr, "mat[%i]: [%s]\n", i, mat[i]);
+		i++;
+	}
+}
+
+int main()
+{
+	char	**out;
+
+	out = ft_split("", '.');
+	print_matrix(out);
+}*/

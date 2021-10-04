@@ -6,12 +6,12 @@
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 17:34:20 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/09/24 17:27:07 by msotelo-         ###   ########.fr       */
+/*   Updated: 2021/10/04 16:11:20 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	recursive(int n, int fd)
+static void	recursive(int n, int fd)
 {
 	char	c;
 
