@@ -6,7 +6,7 @@
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 16:58:07 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/10/01 17:25:08 by msotelo-         ###   ########.fr       */
+/*   Updated: 2021/10/05 00:37:41 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,7 +15,9 @@ static char	*ft_subitoa(int i, int n, int sign)
 {
 	char	*output;
 
-	output = malloc((i + 1) * sizeof(char));
+	output = malloc((i + 2) * sizeof(char));
+	if (!output)
+		return (NULL);
 	if (sign == -1)
 		output[0] = '-';
 	while (n > 9)
