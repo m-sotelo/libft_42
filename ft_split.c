@@ -6,11 +6,10 @@
 /*   By: msotelo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 20:53:57 by msotelo-          #+#    #+#             */
-/*   Updated: 2021/10/05 00:34:31 by msotelo-         ###   ########.fr       */
+/*   Updated: 2021/10/05 18:02:49 by msotelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
 
 static int	word_count(const char *s, char c)
 {
@@ -51,7 +50,7 @@ static char	**memsplit(const char *s, char c, char **out, int i)
 	int		k;
 	char	**aux;
 
-	out = (char **)calloc((i + 1), sizeof(char *));
+	out = (char **)ft_calloc((i + 1), sizeof(char *));
 	aux = out;
 	while (i > 0)
 	{
@@ -63,7 +62,7 @@ static char	**memsplit(const char *s, char c, char **out, int i)
 			k++;
 			s++;
 		}
-		*out = (char *)calloc((k + 1), sizeof(char));
+		*out = (char *)ft_calloc((k + 1), sizeof(char));
 		if (!*out)
 			return (mem_freedom(out, i, word_count(s, c)));
 		out++;
@@ -105,22 +104,3 @@ char	**ft_split(const char *s, char c)
 	out = subsplit(s, c, out, i);
 	return (out);
 }
-/*
-void	print_matrix(char **mat)
-{
-	int i = 0;
-
-	while (mat[i])
-	{
-		fprintf(stderr, "mat[%i]: [%s]\n", i, mat[i]);
-		i++;
-	}
-}
-
-int main()
-{
-	char	**out;
-
-	out = ft_split("", '.');
-	print_matrix(out);
-}*/
